@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 60%;
+      margin: auto;
+      height: 50vh;
+      border: 1px solid;
+      background-color: aqua;
+    }
+    #input1{
+      width: 80%;
+      margin: 3em auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AUTO WORD CENSOR</h1>
+    <input id="input2" type="text">
+    <button onclick="display()">enter</button>
+    <h1 id="show"></h1>
+    <input id="input1" oninput="change()" type="text">  
+  </div>
+</body>
+</html>
+<script>
+
+function change() {
+let input1 = document.getElementById('input1')
+input1.value = input1.value.replace('fuck', 'f**k')
+input1.value = input1.value.replace('sex', 'gender')
+input1.value = input1.value.replace('shit', 'Sh*t')
+}
+
+function display(){
+  let input2 = document.getElementById('input2')
+  let show = document.getElementById('show')
+  show.innerHTML = input2.value.replace('fuck', 'f**k').replace('sex', 'gender').replace('shit', 'Sh*t')
+}
+  // let vogue = 'fuck'
+  // console.log(vogue.replace('u', '*'));
+</script>
